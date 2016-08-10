@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.qmcaifu.parent</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.qmcaifu.parent.facade</groupId>
+	<artifactId>parent-facade</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>parent-facade</name>
+
+	<distributionManagement>
+		<repository>
+			<id>dev-release</id>
+			<name>Nexus Releases Repository</name>
+			<url>http://192.168.1.206:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>dev-snapshot</id>
+			<name>Nexus Snapshots Repository</name>
+			<url>http://192.168.1.206:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		
+
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-source-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>attach-sources</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<configuration>
+				<charset>UTF-8</charset>
+				<encoding>UTF-8</encoding>
+			</configuration>
+			<executions>
+				<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+		
+		</plugins>
+	</build>
+	
+</project>

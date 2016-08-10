@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/archetype-parent.iml" filepath="$PROJECT_DIR$/archetype-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-biz/parent-biz.iml" filepath="$PROJECT_DIR$/parent-biz/parent-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-dal/parent-dal.iml" filepath="$PROJECT_DIR$/parent-dal/parent-dal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-facade/parent-facade.iml" filepath="$PROJECT_DIR$/parent-facade/parent-facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-integration/parent-integration.iml" filepath="$PROJECT_DIR$/parent-integration/parent-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-service/parent-service.iml" filepath="$PROJECT_DIR$/parent-service/parent-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-util/parent-util.iml" filepath="$PROJECT_DIR$/parent-util/parent-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-web/parent-web.iml" filepath="$PROJECT_DIR$/parent-web/parent-web.iml" />
+    </modules>
+  </component>
+</project>

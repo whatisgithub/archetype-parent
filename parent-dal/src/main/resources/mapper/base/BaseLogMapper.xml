@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qmcaifu.parent.dal.dao.BaseLogMapper" >
+  <resultMap id="BaseResultMap" type="com.qmcaifu.parent.dal.model.BaseLog" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.qmcaifu.parent.dal.model.BaseLog" extends="BaseResultMap" >
+    <result column="info" property="info" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ip, user_id, time, company_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    info
+  </sql>
+  
+  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+  	select <include refid="Base_Column_List"/>
+  	from base_log
+  	limit 0,30
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from base_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from base_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qmcaifu.parent.dal.model.BaseLog" >
+    insert into base_log (id, ip, user_id, 
+      time, company_id, info
+      )
+    values (#{id,jdbcType=INTEGER}, #{ip,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{time,jdbcType=VARCHAR}, #{companyId,jdbcType=INTEGER}, #{info,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qmcaifu.parent.dal.model.BaseLog" >
+    insert into base_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="info != null" >
+        info,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="info != null" >
+        #{info,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qmcaifu.parent.dal.model.BaseLog" >
+    update base_log
+    <set >
+      <if test="ip != null" >
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="info != null" >
+        info = #{info,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qmcaifu.parent.dal.model.BaseLog" >
+    update base_log
+    set ip = #{ip,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      company_id = #{companyId,jdbcType=INTEGER},
+      info = #{info,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qmcaifu.parent.dal.model.BaseLog" >
+    update base_log
+    set ip = #{ip,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      company_id = #{companyId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
