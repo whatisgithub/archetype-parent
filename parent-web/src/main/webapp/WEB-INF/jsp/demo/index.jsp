@@ -18,10 +18,13 @@
 <h1>hello</h1>
 <form method="post" name="form" action="${ctx}/demo/dtrDemo">
 
-    name: <input type="text" name="name" value="zhangsna"/><br/>
+    name(姓名): <input type="text" name="name" value="zhangsna"/><br/>
     age: <input type="text" name="age" value="22"/><br/>
     sex: <input type="text" name="sex" value="男"/><br/>
     date: <input type="text" name="date" value="20160810120000"/><br/>
+    address: <input type="text" name="address" value="20160810120000"/><br/>
+    phone: <input type="text" name="phone" value="20160810120000"/><br/>
+    money: <input type="text" name="money" value="20160810120000"/><br/>
 
     <br/>
     <br/>

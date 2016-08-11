@@ -10,7 +10,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.2.4.RELEASE</spring.version>
 		<cxf.version>3.1.5</cxf.version>
-		<self.version>0.0.1-SNAPSHOT</self.version>
+		<self.version>1.0-SNAPSHOT</self.version>
 		<self.facade.version>1.1.0-SNAPSHOT</self.facade.version>
 	</properties>
 
@@ -20,43 +20,43 @@
 			<dependency>
 				<groupId>com.qmcaifu.parent.util</groupId>
 				<artifactId>parent-util</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>${self.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.qmcaifu.parent.dal</groupId>
 				<artifactId>parent-dal</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>${self.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.qmcaifu.parent.service</groupId>
 				<artifactId>parent-service</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>${self.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.qmcaifu.parent.integration</groupId>
 				<artifactId>parent-integration</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>${self.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.qmcaifu.parent.facade</groupId>
 				<artifactId>parent-facade</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>${self.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.qmcaifu.parent.web</groupId>
 				<artifactId>parent-web</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>${self.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.qmcaifu.parent.biz</groupId>
 				<artifactId>parent-biz</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>${self.version}</version>
 			</dependency>
 
 			<dependency>
@@ -86,6 +86,12 @@
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context-support</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jms</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
 
@@ -123,12 +129,6 @@
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
 				<version>5.0.1.Final</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.github.axet</groupId>
-				<artifactId>kaptcha</artifactId>
-				<version>0.0.9</version>
 			</dependency>
 
 			<dependency>
@@ -175,27 +175,9 @@
 			</dependency>
 
 			<dependency>
-				<groupId>com.jcraft</groupId>
-				<artifactId>jsch</artifactId>
-				<version>0.1.53</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.jcraft</groupId>
-				<artifactId>jzlib</artifactId>
-				<version>1.1.3</version>
-			</dependency>
-
-			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
 				<version>4.5.1</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>19.0</version>
 			</dependency>
 
 			<dependency>
@@ -208,12 +190,6 @@
 				<groupId>javax.mail</groupId>
 				<artifactId>mail</artifactId>
 				<version>1.4.3</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-jms</artifactId>
-				<version>${spring.version}</version>
 			</dependency>
 
 			<dependency>
@@ -263,6 +239,13 @@
 				<artifactId>commons-codec</artifactId>
 				<version>1.10</version>
 			</dependency>
+
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+
 
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
@@ -316,6 +299,18 @@
 				<artifactId>servlet-api</artifactId>
 				<version>2.5</version>
 				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>1.1.0.Final</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>5.0.1.Final</version>
 			</dependency>
 
 		</dependencies>

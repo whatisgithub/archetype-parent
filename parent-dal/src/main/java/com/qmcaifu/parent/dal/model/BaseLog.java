@@ -1,5 +1,9 @@
 package com.qmcaifu.parent.dal.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
+import java.util.Date;
+
 public class BaseLog {
     private Integer id;
 
@@ -12,6 +16,17 @@ public class BaseLog {
     private Integer companyId;
 
     private String info;
+
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime = new Date();
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
     public Integer getId() {
         return id;

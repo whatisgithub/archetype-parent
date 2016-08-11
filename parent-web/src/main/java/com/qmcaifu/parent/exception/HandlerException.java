@@ -19,6 +19,6 @@ public class HandlerException implements HandlerExceptionResolver {
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
         logger.error("哎呦出异常了 {}", ex);
         //TODO yourself business code insert here
-        return new ModelAndView("500.html");
+        return new ModelAndView("500");
     }
 }

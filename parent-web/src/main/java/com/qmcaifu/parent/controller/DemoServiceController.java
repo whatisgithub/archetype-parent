@@ -4,16 +4,21 @@ import com.qmcaifu.parent.dal.model.BaseLog;
 import com.qmcaifu.parent.form.DemoUserForm;
 import com.qmcaifu.parent.form.base.DataTableResultDto;
 import com.qmcaifu.parent.service.BaseService;
+import com.qmcaifu.parent.util.BindResultUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.util.Collections;
 import java.util.List;
 
@@ -31,7 +36,12 @@ public class DemoServiceController {
 	public String index(){
 		return "demo/index";
 	}
-	
+
+	@RequestMapping("/bootstrap/index")
+	public String bootstrapIndex() {
+		return "bootstrap/index";
+	}
+
 	@Autowired
 	private BaseService baseService;
 	
@@ -45,8 +55,16 @@ public class DemoServiceController {
 
 	@RequestMapping(value = "/dtrDemo")
 	@ResponseBody
-	public DataTableResultDto<DemoUserForm> dtrDemo(DemoUserForm form){
-		return new DataTableResultDto<DemoUserForm>(100, Collections.EMPTY_LIST);
+	public DataTableResultDto<BaseLog> dtrDemo(@Valid DemoUserForm form, BindingResult result){
+		if(result.hasErrors()) {
+			String msg = BindResultUtils.handlerErrMsg(result);
+			logger.info("验证有错误: {}", msg);
+		}
+		logger.info("{}", form);
+
+		//query list
+		List<BaseLog> baseLogs = baseService.queryList();
+		return new DataTableResultDto<BaseLog>(baseLogs.size(), baseLogs);
     }
 	
 	
