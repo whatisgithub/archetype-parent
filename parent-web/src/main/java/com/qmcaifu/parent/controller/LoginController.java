@@ -19,4 +19,9 @@ public class LoginController {
         return "login/main";
     }
 
+    public String logout(HttpServletRequest request){
+        logger.info("==={}===登出系统", "a");
+        return "redirect:/login";
+    }
+
 }
