@@ -128,21 +128,11 @@
 				<artifactId>commons-fileupload</artifactId>
 			</dependency>
 
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+			</dependency>
 
-			<!-- 			<dependency> -->
-<!-- 				<groupId>org.apache.zookeeper</groupId> -->
-<!-- 				<artifactId>zookeeper</artifactId> -->
-<!-- 				<exclusions> -->
-<!-- 					<exclusion> -->
-<!-- 						<artifactId>slf4j-log4j12</artifactId> -->
-<!-- 						<groupId>org.slf4j</groupId> -->
-<!-- 					</exclusion> -->
-<!-- 					<exclusion> -->
-<!-- 						<artifactId>log4j</artifactId> -->
-<!-- 						<groupId>log4j</groupId> -->
-<!-- 					</exclusion> -->
-<!-- 				</exclusions> -->
-<!-- 			</dependency> -->
 
 		</dependencies>
 		

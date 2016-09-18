@@ -11,6 +11,7 @@ mvn eclipse:clean
 mvn archetype:create-from-project
 
 3.加入构建配置
+
 <distributionManagement>
 		<repository>
 			<id>dev-release</id>
@@ -22,7 +23,6 @@ mvn archetype:create-from-project
 			<name>Nexus Snapshots Repository</name>
 			<url>http://ip:port/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
-
 	</distributionManagement>
 
 4.部署到nexus

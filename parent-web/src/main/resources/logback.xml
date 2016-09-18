@@ -34,8 +34,8 @@
 	</root>
 
 	<logger name="druid.sql.Statement" level="DEBUG"/>
-	<logger name="org.mybatis" level="INFO" />
-	<logger name="org.springframework" level="INFO" />
+	<logger name="org.mybatis" level="DEBUG" />
+	<logger name="org.springframework" level="DEBUG" />
 	<logger name="org.apache" level="DEBUG"/>
 
 </configuration>

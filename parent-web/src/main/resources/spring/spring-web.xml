@@ -11,7 +11,7 @@
            http://www.springframework.org/schema/mvc        
            http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	<!-- 开启注解扫描功能 -->
-	<context:component-scan base-package="com.qmcaifu.parent.*" />
+	<context:component-scan base-package="com.qmcaifu.parent.controller" />
 
 	<!--<mvc:view-controller path="/" view-name="login/main"/>-->
     <mvc:resources location="/common" mapping="/common/**"/>

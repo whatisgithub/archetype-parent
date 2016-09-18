@@ -1,5 +1,6 @@
 package com.qmcaifu.parent.controller;
 
+import com.qmcaifu.parent.biz.HelloBiz;
 import com.qmcaifu.parent.dal.model.BaseLog;
 import com.qmcaifu.parent.form.DemoUserForm;
 import com.qmcaifu.parent.form.base.DataTableResultDto;
@@ -7,6 +8,7 @@ import com.qmcaifu.parent.service.BaseService;
 import com.qmcaifu.parent.util.BindResultUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -25,6 +27,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/demo")
 public class DemoServiceController {
+
+	@Autowired
+	private HelloBiz helloBiz;
 
 	private static final Logger logger = LoggerFactory.getLogger(DemoServiceController.class);
 	
@@ -65,7 +70,13 @@ public class DemoServiceController {
 	
 	
 	public void testHttpRequest(HttpServletRequest request, HttpServletResponse response){
-		
+	}
+
+	@RequestMapping("/dubbo")
+	@ResponseBody
+	public Object testDubbo(){
+		helloBiz.sayHello();
+		return "123456";
 	}
 	
 }
