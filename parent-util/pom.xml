@@ -133,6 +133,10 @@
 				<artifactId>dubbo</artifactId>
 			</dependency>
 
+			<dependency>
+				<groupId>com.qmcaifu.common.runtime</groupId>
+				<artifactId>runtime</artifactId>
+			</dependency>
 
 		</dependencies>
 		

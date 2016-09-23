@@ -1,5 +1,8 @@
 package com.qmcaifu.parent.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.qmcaifu.common.service.MQService;
+import com.qmcaifu.common.service.RedisService;
 import com.qmcaifu.parent.biz.HelloBiz;
 import com.qmcaifu.parent.dal.model.BaseLog;
 import com.qmcaifu.parent.form.DemoUserForm;
@@ -30,6 +33,12 @@ public class DemoServiceController {
 
 	@Autowired
 	private HelloBiz helloBiz;
+
+	@Autowired
+	private RedisService redisService;
+
+    @Autowired
+    private MQService mqService;
 
 	private static final Logger logger = LoggerFactory.getLogger(DemoServiceController.class);
 	
@@ -78,5 +87,27 @@ public class DemoServiceController {
 		helloBiz.sayHello();
 		return "123456";
 	}
+
+	@RequestMapping("/redis")
+    @ResponseBody
+	public Object testRedis(){
+	    String key = "userid:zhangsan";
+        redisService.set(key, "12345");
+
+		redisService.set("accountBal:zhagnsan", "100", 60);
+	    return redisService.get(key);
+    }
+
+    @RequestMapping("/mq")
+    @ResponseBody
+    public Object testMQ(){
+        BaseLog bl = new BaseLog();
+        for(int i=0;i<10;i++){
+            bl.setId(i);
+            bl.setInfo("nimei");
+            mqService.send(JSON.toJSONString(bl));
+        }
+        return "";
+    }
 	
 }
