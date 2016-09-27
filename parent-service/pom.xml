@@ -10,7 +10,6 @@
   <groupId>com.qmcaifu.parent.service</groupId>
   <artifactId>parent-service</artifactId>
   
-  <name>parent-service</name>
   <dependencies>
   
     <dependency>

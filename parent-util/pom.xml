@@ -9,13 +9,10 @@
 	<groupId>com.qmcaifu.parent.util</groupId>
 	<artifactId>parent-util</artifactId>
 
-	<name>parent-util</name>
-
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
 				<exclusions>
 					<exclusion>
 						<artifactId>commons-logging</artifactId>

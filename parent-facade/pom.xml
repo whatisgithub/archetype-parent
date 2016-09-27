@@ -11,8 +11,6 @@
 	<artifactId>parent-facade</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-	<name>parent-facade</name>
-
 	<distributionManagement>
 		<repository>
 			<id>dev-release</id>

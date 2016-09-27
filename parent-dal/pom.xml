@@ -11,8 +11,6 @@
 	<artifactId>parent-dal</artifactId>
 	<packaging>jar</packaging>
 
-	<name>parent-dal</name>
-
 	<dependencies>
 
 		<dependency>
