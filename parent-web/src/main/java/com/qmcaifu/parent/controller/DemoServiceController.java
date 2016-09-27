@@ -105,7 +105,7 @@ public class DemoServiceController {
         for(int i=0;i<10;i++){
             bl.setId(i);
             bl.setInfo("nimei");
-            mqService.send(JSON.toJSONString(bl));
+            mqService.send("rk", JSON.toJSONString(bl));
         }
         return "";
     }
