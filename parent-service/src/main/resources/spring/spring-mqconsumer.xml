@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/rabbit
+           http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+	<!-- 直连交换机声明 -->
+	<rabbit:direct-exchange name="exchange.direct.parent">
+	</rabbit:direct-exchange>
+
+	<!-- spring amqpTemplate声明 -->
+	<rabbit:template id="amqpTemplate" connection-factory="connectionFactory" exchange="exchange.direct.parent"/>
+
+	<rabbit:queue name="queue.parent.hello" durable="true" auto-delete="false" exclusive="false" />
+
+	<rabbit:direct-exchange name="exchange.direct.parent">
+		<rabbit:bindings>
+			<rabbit:binding queue="queue.parent.hello" key="rk"></rabbit:binding>
+		</rabbit:bindings>
+	</rabbit:direct-exchange>
+
+
+
+</beans>
