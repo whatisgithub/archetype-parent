@@ -22,11 +22,5 @@
       <scope>test</scope>
     </dependency>
 
-
-    <dependency>
-      <groupId>com.qmcaifu.facade</groupId>
-      <artifactId>trade-facade</artifactId>
-    </dependency>
-
   </dependencies>
 </project>

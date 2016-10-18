@@ -1,238 +1,532 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/WEB-INF/jsp/common/jspHead.jsp"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="zh-CN">
+<%@include file="/WEB-INF/jsp/common/jspHead.jsp" %>
+<!DOCTYPE html>
+<html>
 <head>
-    <%@include file="/WEB-INF/jsp/common/bootstrapHead.jsp"%>
-    <title>bootstrap demo</title>
-    <link rel="stylesheet" href="${ctx}/common/css/dashboard.css"/>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $(".nav-sidebar li:first-child").click(function(){
-                $(this).siblings().slideToggle();
-            });
-
-
-            $(".nav-sidebar li:first-child").siblings().click(function () {
-                $(".nav-sidebar .active").removeClass("active");
-                $(this).addClass("active");
-            });
-        });
-
-    </script>
+    <%@include file="/WEB-INF/jsp/common/htmlHead.jsp" %>
 </head>
-<body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search...">
-            </form>
-        </div>
-    </div>
-</nav>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li><a href="javascript:void(0);"><h3>系统设置</h3></a></li>
-                <li style="display: none;"><a href="#">Reports</a></li>
-                <li style="display: none;"><a href="#">Analytics</a></li>
-                <li style="display: none;"><a href="#">Overview</a></li>
-                <li style="display: none;"><a href="#">Export</a></li>
-            </ul>
+    <%@include file="/WEB-INF/jsp/common/topBar.jsp" %>
+    <%@include file="/WEB-INF/jsp/common/leftBar.jsp" %>
 
-            <ul class="nav nav-sidebar">
-                <li><a href="javascript:void(0);"><h3>系统设置</h3></a></li>
-                <li style="display: none;"><a href="#">Reports</a></li>
-                <li style="display: none;"><a href="#">Analytics</a></li>
-                <li style="display: none;"><a href="#">Overview</a></li>
-                <li style="display: none;"><a href="#">Export</a></li>
-            </ul>
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Dashboard
+                <small>Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </section>
 
-            <ul class="nav nav-sidebar">
-                <li><a href="javascript:void(0);"><h3>系统设置</h3></a></li>
-                <li style="display: none;"><a href="#">Reports</a></li>
-                <li style="display: none;"><a href="#">Analytics</a></li>
-                <li style="display: none;"><a href="#">Overview</a></li>
-                <li style="display: none;"><a href="#">Export</a></li>
-            </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Dashboard</h1>
+        <!-- Main content -->
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>150</h3>
 
-            <div class="row placeholders">
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-                    <h4>Label</h4>
-                    <span class="text-muted">Something else</span>
+                            <p>New Orders</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-                    <h4>Label</h4>
-                    <span class="text-muted">Something else</span>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                            <p>Bounce Rate</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-                    <h4>Label</h4>
-                    <span class="text-muted">Something else</span>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3>44</h3>
+
+                            <p>User Registrations</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-                    <h4>Label</h4>
-                    <span class="text-muted">Something else</span>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>65</h3>
+
+                            <p>Unique Visitors</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
+                <!-- ./col -->
             </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-7 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <div class="nav-tabs-custom">
+                        <!-- Tabs within a box -->
+                        <ul class="nav nav-tabs pull-right">
+                            <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
+                            <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
+                            <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                        </ul>
+                        <div class="tab-content no-padding">
+                            <!-- Morris chart - Sales -->
+                            <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+                            <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+                        </div>
+                    </div>
+                    <!-- /.nav-tabs-custom -->
 
-            <h2 class="sub-header">Section title</h2>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                    </tr>
-                    <tr>
-                        <td>1,002</td>
-                        <td>amet</td>
-                        <td>consectetur</td>
-                        <td>adipiscing</td>
-                        <td>elit</td>
-                    </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>Integer</td>
-                        <td>nec</td>
-                        <td>odio</td>
-                        <td>Praesent</td>
-                    </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>libero</td>
-                        <td>Sed</td>
-                        <td>cursus</td>
-                        <td>ante</td>
-                    </tr>
-                    <tr>
-                        <td>1,004</td>
-                        <td>dapibus</td>
-                        <td>diam</td>
-                        <td>Sed</td>
-                        <td>nisi</td>
-                    </tr>
-                    <tr>
-                        <td>1,005</td>
-                        <td>Nulla</td>
-                        <td>quis</td>
-                        <td>sem</td>
-                        <td>at</td>
-                    </tr>
-                    <tr>
-                        <td>1,006</td>
-                        <td>nibh</td>
-                        <td>elementum</td>
-                        <td>imperdiet</td>
-                        <td>Duis</td>
-                    </tr>
-                    <tr>
-                        <td>1,007</td>
-                        <td>sagittis</td>
-                        <td>ipsum</td>
-                        <td>Praesent</td>
-                        <td>mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,008</td>
-                        <td>Fusce</td>
-                        <td>nec</td>
-                        <td>tellus</td>
-                        <td>sed</td>
-                    </tr>
-                    <tr>
-                        <td>1,009</td>
-                        <td>augue</td>
-                        <td>semper</td>
-                        <td>porta</td>
-                        <td>Mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,010</td>
-                        <td>massa</td>
-                        <td>Vestibulum</td>
-                        <td>lacinia</td>
-                        <td>arcu</td>
-                    </tr>
-                    <tr>
-                        <td>1,011</td>
-                        <td>eget</td>
-                        <td>nulla</td>
-                        <td>Class</td>
-                        <td>aptent</td>
-                    </tr>
-                    <tr>
-                        <td>1,012</td>
-                        <td>taciti</td>
-                        <td>sociosqu</td>
-                        <td>ad</td>
-                        <td>litora</td>
-                    </tr>
-                    <tr>
-                        <td>1,013</td>
-                        <td>torquent</td>
-                        <td>per</td>
-                        <td>conubia</td>
-                        <td>nostra</td>
-                    </tr>
-                    <tr>
-                        <td>1,014</td>
-                        <td>per</td>
-                        <td>inceptos</td>
-                        <td>himenaeos</td>
-                        <td>Curabitur</td>
-                    </tr>
-                    <tr>
-                        <td>1,015</td>
-                        <td>sodales</td>
-                        <td>ligula</td>
-                        <td>in</td>
-                        <td>libero</td>
-                    </tr>
-                    </tbody>
-                </table>
+                    <!-- Chat box -->
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <i class="fa fa-comments-o"></i>
+
+                            <h3 class="box-title">Chat</h3>
+
+                            <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
+                                <div class="btn-group" data-toggle="btn-toggle">
+                                    <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-body chat" id="chat-box">
+                            <!-- chat item -->
+                            <div class="item">
+                                <img src="${ctx}/common/img/user4-128x128.jpg" alt="user image" class="online">
+
+                                <p class="message">
+                                    <a href="#" class="name">
+                                        <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
+                                        Mike Doe
+                                    </a>
+                                    I would like to meet you to discuss the latest news about
+                                    the arrival of the new theme. They say it is going to be one the
+                                    best themes on the market
+                                </p>
+                                <div class="attachment">
+                                    <h4>Attachments:</h4>
+
+                                    <p class="filename">
+                                        Theme-thumbnail-image.jpg
+                                    </p>
+
+                                    <div class="pull-right">
+                                        <button type="button" class="btn btn-primary btn-sm btn-flat">Open</button>
+                                    </div>
+                                </div>
+                                <!-- /.attachment -->
+                            </div>
+                            <!-- /.item -->
+                            <!-- chat item -->
+                            <div class="item">
+                                <img src="${ctx}/common/img/user3-128x128.jpg" alt="user image" class="offline">
+
+                                <p class="message">
+                                    <a href="#" class="name">
+                                        <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
+                                        Alexander Pierce
+                                    </a>
+                                    I would like to meet you to discuss the latest news about
+                                    the arrival of the new theme. They say it is going to be one the
+                                    best themes on the market
+                                </p>
+                            </div>
+                            <!-- /.item -->
+                            <!-- chat item -->
+                            <div class="item">
+                                <img src="${ctx}/common/img/user2-160x160.jpg" alt="user image" class="offline">
+
+                                <p class="message">
+                                    <a href="#" class="name">
+                                        <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
+                                        Susan Doe
+                                    </a>
+                                    I would like to meet you to discuss the latest news about
+                                    the arrival of the new theme. They say it is going to be one the
+                                    best themes on the market
+                                </p>
+                            </div>
+                            <!-- /.item -->
+                        </div>
+                        <!-- /.chat -->
+                        <div class="box-footer">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="Type message...">
+
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box (chat box) -->
+
+                    <!-- TO DO List -->
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <i class="ion ion-clipboard"></i>
+
+                            <h3 class="box-title">To Do List</h3>
+
+                            <div class="box-tools pull-right">
+                                <ul class="pagination pagination-sm inline">
+                                    <li><a href="#">&laquo;</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <ul class="todo-list">
+                                <li>
+                                    <!-- drag handle -->
+                                    <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" value="">
+                                    <!-- todo text -->
+                                    <span class="text">Design a nice theme</span>
+                                    <!-- Emphasis label -->
+                                    <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                                    <!-- General tools such as edit or delete-->
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Make the theme responsive</span>
+                                    <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Let theme shine like a star</span>
+                                    <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Let theme shine like a star</span>
+                                    <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Check your messages and notifications</span>
+                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Let theme shine like a star</span>
+                                    <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer clearfix no-border">
+                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+                        </div>
+                    </div>
+                    <!-- /.box -->
+
+                    <!-- quick email widget -->
+                    <div class="box box-info">
+                        <div class="box-header">
+                            <i class="fa fa-envelope"></i>
+
+                            <h3 class="box-title">Quick Email</h3>
+                            <!-- tools box -->
+                            <div class="pull-right box-tools">
+                                <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                                    <i class="fa fa-times"></i></button>
+                            </div>
+                            <!-- /. tools -->
+                        </div>
+                        <div class="box-body">
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="emailto" placeholder="Email to:">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject">
+                                </div>
+                                <div>
+                                    <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="box-footer clearfix">
+                            <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+                                <i class="fa fa-arrow-circle-right"></i></button>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                <section class="col-lg-5 connectedSortable">
+
+                    <!-- Map box -->
+                    <div class="box box-solid bg-light-blue-gradient">
+                        <div class="box-header">
+                            <!-- tools box -->
+                            <div class="pull-right box-tools">
+                                <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
+                                    <i class="fa fa-calendar"></i></button>
+                                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                                    <i class="fa fa-minus"></i></button>
+                            </div>
+                            <!-- /. tools -->
+
+                            <i class="fa fa-map-marker"></i>
+
+                            <h3 class="box-title">
+                                Visitors
+                            </h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="world-map" style="height: 250px; width: 100%;"></div>
+                        </div>
+                        <!-- /.box-body-->
+                        <div class="box-footer no-border">
+                            <div class="row">
+                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                    <div id="sparkline-1"></div>
+                                    <div class="knob-label">Visitors</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                    <div id="sparkline-2"></div>
+                                    <div class="knob-label">Online</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-xs-4 text-center">
+                                    <div id="sparkline-3"></div>
+                                    <div class="knob-label">Exists</div>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </div>
+                    <!-- /.box -->
+
+                    <!-- solid sales graph -->
+                    <div class="box box-solid bg-teal-gradient">
+                        <div class="box-header">
+                            <i class="fa fa-th"></i>
+
+                            <h3 class="box-title">Sales Graph</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-body border-radius-none">
+                            <div class="chart" id="line-chart" style="height: 250px;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer no-border">
+                            <div class="row">
+                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="knob-label">Mail-Orders</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="knob-label">Online</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-xs-4 text-center">
+                                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="knob-label">In-Store</div>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.box-footer -->
+                    </div>
+                    <!-- /.box -->
+
+                    <!-- Calendar -->
+                    <div class="box box-solid bg-green-gradient">
+                        <div class="box-header">
+                            <i class="fa fa-calendar"></i>
+
+                            <h3 class="box-title">Calendar</h3>
+                            <!-- tools box -->
+                            <div class="pull-right box-tools">
+                                <!-- button with a dropdown -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-bars"></i></button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Add new event</a></li>
+                                        <li><a href="#">Clear events</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">View calendar</a></li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                            <!-- /. tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <!--The calendar -->
+                            <div id="calendar" style="width: 100%"></div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer text-black">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- Progress bars -->
+                                    <div class="clearfix">
+                                        <span class="pull-left">Task #1</span>
+                                        <small class="pull-right">90%</small>
+                                    </div>
+                                    <div class="progress xs">
+                                        <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
+                                    </div>
+
+                                    <div class="clearfix">
+                                        <span class="pull-left">Task #2</span>
+                                        <small class="pull-right">70%</small>
+                                    </div>
+                                    <div class="progress xs">
+                                        <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-sm-6">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Task #3</span>
+                                        <small class="pull-right">60%</small>
+                                    </div>
+                                    <div class="progress xs">
+                                        <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
+                                    </div>
+
+                                    <div class="clearfix">
+                                        <span class="pull-left">Task #4</span>
+                                        <small class="pull-right">40%</small>
+                                    </div>
+                                    <div class="progress xs">
+                                        <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
+                                    </div>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </div>
+                    <!-- /.box -->
+
+                </section>
+                <!-- right col -->
             </div>
-        </div>
+            <!-- /.row (main row) -->
+
+        </section>
+        <!-- /.content -->
     </div>
+
+    <%@include file="/WEB-INF/jsp/common/footBar.jsp" %>
+
+    <%@include file="/WEB-INF/jsp/common/controlBar.jsp" %>
 </div>
 
-</div><!-- /.container -->
+<%@include file="/WEB-INF/jsp/common/htmlFoot.jsp" %>
 </body>
 </html>

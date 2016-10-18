@@ -31,8 +31,6 @@ import java.util.List;
 @RequestMapping("/demo")
 public class DemoServiceController {
 
-	@Autowired
-	private HelloBiz helloBiz;
 
 	@Autowired
 	private RedisService redisService;
@@ -81,13 +79,6 @@ public class DemoServiceController {
 	public void testHttpRequest(HttpServletRequest request, HttpServletResponse response){
 	}
 
-	@RequestMapping("/dubbo")
-	@ResponseBody
-	public Object testDubbo(){
-		helloBiz.sayHello();
-		return "123456";
-	}
-
 	@RequestMapping("/redis")
     @ResponseBody
 	public Object testRedis(){
@@ -109,5 +100,4 @@ public class DemoServiceController {
         }
         return "";
     }
-	
 }
